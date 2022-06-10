@@ -283,7 +283,7 @@ EVAL Search::abSearch(EVAL alpha, EVAL beta, int depth, int ply, bool isNull, bo
         //  static null move pruning
         //
 
-        if (depth <= 8 && bestScore - 85 * depth > beta)
+        if (!ttHit && depth <= 8 && bestScore - 85 * depth > beta)
             return bestScore;
 
         //
